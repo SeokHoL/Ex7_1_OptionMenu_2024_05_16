@@ -1,21 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
     xmlns:app="http://schemas.android.com/apk/res-auto"
+
     xmlns:tools="http://schemas.android.com/tools"
+
     android:layout_width="match_parent"
+
     android:layout_height="match_parent"
-    android:id="@+id/linear"
-    android:gravity="center_horizontal"
-    tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/btn"
-        android:layout_width="wrap_content"
+    tools:context=".MainActivity"
+
+    android:orientation="vertical"
+
+    android:id="@+id/linear">
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
 
-        android:text="변경될 버튼"/>
+        android:orientation="horizontal"
 
+        android:layout_marginBottom="15dp">
 
+        <TextView
+
+            android:id="@+id/RotateText"
+
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="15dp"
+
+            android:text="회전 각도 입력"/>
+
+        <EditText
+            android:id="@+id/editDegree"
+            android:layout_width="match_parent"
+            android:inputType="number"
+            android:layout_height="wrap_content"
+
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+
+        android:layout_height="match_parent"
+
+        android:gravity="center"
+
+        android:orientation="vertical"
+
+        >
+
+        <ImageView
+            android:id="@+id/imgV"
+            android:layout_gravity="center"
+
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+
+            android:src="@drawable/img1"/>
+
+    </LinearLayout>
 
 </LinearLayout>

@@ -6,11 +6,14 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Button
+import android.widget.EditText
+import android.widget.ImageView
 import android.widget.LinearLayout
 
 class MainActivity : AppCompatActivity() {
     lateinit var  linear: LinearLayout
-    lateinit var  btn : Button
+    lateinit var editDegree : EditText
+    lateinit var imgV : ImageView
 
 
 
@@ -18,7 +21,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         linear =findViewById(R.id.linear)
-        btn =findViewById(R.id.btn)
+        editDegree =findViewById<EditText>(R.id.editDegree)
+        imgV =findViewById<ImageView>(R.id.imgV)
         
     }
 
@@ -36,26 +40,28 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
         when(item.itemId){
-            R.id.itemRed -> {
-                linear.setBackgroundColor(Color.RED)
+
+            R.id.itemRotate ->{
+                imgV.rotation = editDegree.text.toString().toFloat()
+
                 return true
             }
-            R.id.itemGreen -> {
-                linear.setBackgroundColor(Color.GREEN)
+            R.id.itemHanra ->{
+                imgV.setImageResource(R.drawable.img1)
+                item.setChecked(true)
                 return true
             }
-            R.id.itemBlue -> {
-                linear.setBackgroundColor(Color.BLUE)
+            R.id.itemChuja ->{
+                imgV.setImageResource(R.drawable.img2)
+                item.setChecked(true)
                 return true
             }
-            R.id.btnRotate ->{
-                btn.rotation += 60f
+            R.id.itemBum ->{
+                imgV.setImageResource(R.drawable.img3)
+                item.setChecked(true)
                 return true
             }
-            R.id.btnZoonin ->{
-                btn.scaleX = 2f
-                return true
-            }
+
 
         }
 
